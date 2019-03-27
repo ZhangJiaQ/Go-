@@ -116,6 +116,7 @@ type Men interface {
 	Sing(lyrics string)
 }
 
+
 func main(){
 	// interface就是一组抽象方法的集合，
 	// 它必须由其他非interface类型实现，
@@ -346,6 +347,15 @@ func TestWaitGroup(t *testing.T) {
 select
 
 ### channel的关闭和广播
+
+
+
+# Go语言典型并发任务
+
+1. 单例
+2. 
+
+
 
 
 
