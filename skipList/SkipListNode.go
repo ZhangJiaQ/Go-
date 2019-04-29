@@ -3,18 +3,25 @@ package skipList
 
 
 type SkipListNode struct {
-	level []skipListLevel
-	backward *SkipListNode
+	level []*SkipListNode
 	score float64
+	index uint64
 }
 
-type skipListLevel struct {
-	forward *SkipListNode
-	span int
+func newSkipListNode(score float64, index uint64, level int) *SkipListNode {
+	return &SkipListNode{
+		score: score,
+		index: index,
+		level: make([]*SkipListNode, level, level),
+	}
 }
 
-func NewSkipListNode(score float64) *SkipListNode{
-	node := &SkipListNode{}
-	node.level := [32]*skipListLevel
+// 返回node的index
+func (node SkipListNode) Index() uint64{
+	return node.index
+}
 
+// 返回node的value
+func (node SkipListNode) Value() float64{
+	return node.score
 }
